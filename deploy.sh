@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export CIFS_SHARE=//X.X.X.X/Export/Conductor/data
+export CIFS_SHARE=//X.X.X.X/data
 export CIFS_USER=User
 export CIFS_PASS=Pass
 
