@@ -6,5 +6,6 @@ RUN apt-get update \
   && apt-get install -y cifs-utils
 
 ADD copy.sh /usr/local/bin/copy.sh
+RUN chmod +x /usr/local/bin/copy.sh
 
 CMD ["copy.sh"]
