@@ -22,8 +22,15 @@ echo "mounting cifs to $CIFS_PATH to $CIFS_SHARE_DIR"
 
   sudo $CIFS_MOUNT_DIR/mount.cifs $CIFS_PATH $CIFS_SHARE_DIR -o username=$CIFS_USER,password=$CIFS_PASS
 
-  if [ $? -eq "0" ]; then
+if [ $? -eq "0" ]; then
     echo "SUCCESSFULLY MOUNTED $CIFS_PATH TO $CIFS_SHARE_DIR"
+    sleep 2
+    echo "Now Stopping $CONTAINER_NAME container, Please Wait..."
+  docker stop $CONTAINER_NAME
+    sleep 2
+    echo "Removing $CONTAINER_NAME container, no longer needed..."
+  docker rm $CONTAINER_NAME
+    sleep 2
       else
     echo "FAILED TO MOUNT $CIFS_PATH TO $CIFS_SHARE_DIR"
-  fi 
+  fi
